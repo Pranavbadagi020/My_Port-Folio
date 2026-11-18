@@ -49,9 +49,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCommandPalette }) => {
             href="#"
             className="flex items-center gap-2.5 text-white font-mono font-bold tracking-tight text-base group"
           >
-            <div className="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500/20 group-hover:border-cyan-400 transition-all">
-              <Terminal className="w-4 h-4" />
-            </div>
+            <img
+              src="/pranav.jpg"
+              alt="Pranav"
+              className="w-8 h-8 rounded-lg object-cover object-top border border-cyan-500/30 ring-1 ring-cyan-500/20 group-hover:border-cyan-400 transition-all"
+            />
             <span>
               {PERSONAL_INFO.name}
               <span className="text-cyan-400">.dev</span>

@@ -10,6 +10,7 @@ export const PERSONAL_INFO = {
   linkedin: "https://www.linkedin.com/in/pranav-badagi-631504291/",
   leetcode: "https://leetcode.com/u/Pranav_Badagi--20/",
   resumePdf: "/Pranav_Badagi_Resume.pdf",
+  avatar: "/pranav.jpg",
   bio: "Information Science & Engineering undergraduate in Bengaluru building scalable full-stack web apps, Ethereum smart contracts, and AI-driven systems.",
   status: "Available for SDE / Backend Roles",
 };
@@ -356,10 +357,10 @@ export const MILESTONES: Milestone[] = [
     id: "m2",
     year: "2026",
     title: "Smart India Hackathon (SIH 2026)",
-    institution: "National Innovation Initiative — MARINEX Mission Planning",
-    description: "Developed MARINEX, an AI-powered marine mission planning system utilizing multi-agent LLM orchestration, environmental telemetry parsing (currents, waves, weather), and explainable risk scoring to assist decision support.",
+    institution: "MS Engineering College — SIH Internal Hackathon",
+    description: "Developed MARINEX, an AI-powered marine mission planning system utilizing multi-agent LLM orchestration, environmental telemetry parsing (currents, waves, weather), and explainable risk scoring to assist decision support during our college SIH hackathon.",
     badges: ["SIH 2026", "Multi-Agent LLM", "Marine Intelligence"],
-    highlight: "National Hackathon"
+    highlight: "College Hackathon"
   },
   {
     id: "m3",

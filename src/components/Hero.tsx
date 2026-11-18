@@ -117,84 +117,79 @@ export const Hero: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Right Column: Interactive Engineering Terminal Card */}
+          {/* Right Column: Profile Picture Card & Diagnostics */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="lg:col-span-5"
           >
-            <div className="relative rounded-2xl bg-[#121215]/95 border border-white/10 p-5 shadow-2xl backdrop-blur-xl">
-              {/* Terminal Window Header */}
-              <div className="flex items-center justify-between pb-3.5 border-b border-white/[0.08] mb-4">
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
-                  <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
-                  <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
-                </div>
-                <div className="flex items-center gap-1.5 text-[11px] font-mono text-zinc-400">
-                  <Terminal className="w-3.5 h-3.5 text-cyan-400" />
-                  <span>pranav@kernel:~$</span>
-                </div>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-                  zsh
-                </span>
-              </div>
+            <div className="relative group">
+              {/* Ambient cyan backlight glow */}
+              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-500/20 via-emerald-500/10 to-cyan-500/20 blur-xl opacity-75 group-hover:opacity-100 transition duration-500 pointer-events-none" />
 
-              {/* Terminal Body */}
-              <div className="font-mono text-xs space-y-3 text-zinc-300">
-                <div className="text-zinc-500">
-                  # Running diagnostic sanity checks...
-                </div>
-
-                <div className="flex items-center justify-between p-2.5 rounded-lg bg-zinc-900/60 border border-white/5">
-                  <span className="text-zinc-400 flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                    Automated Test Coverage
+              <div className="relative rounded-2xl bg-[#121215] border border-white/10 overflow-hidden shadow-2xl">
+                {/* Header Window Bar */}
+                <div className="px-4 py-2.5 bg-zinc-900/80 border-b border-white/[0.08] flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                    <span className="ml-1 text-[11px] font-mono text-zinc-400">pranav_badagi.jpg</span>
+                  </div>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                    Bengaluru, KA
                   </span>
-                  <span className="font-bold text-emerald-400">81+ Suites PASS</span>
                 </div>
 
-                <div className="flex items-center justify-between p-2.5 rounded-lg bg-zinc-900/60 border border-white/5">
-                  <span className="text-zinc-400 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-cyan-400" />
-                    SIH 2026 National Finalist
-                  </span>
-                  <span className="font-bold text-cyan-400">MARINEX AI</span>
+                {/* High-Resolution Clear Profile Picture */}
+                <div className="relative w-full h-[380px] sm:h-[420px] overflow-hidden bg-zinc-950">
+                  <img
+                    src="/pranav.jpg"
+                    alt="Pranav Badagi"
+                    className="w-full h-full object-cover object-[center_16%] group-hover:scale-[1.02] transition-transform duration-500"
+                    loading="eager"
+                  />
+                  {/* Subtle gradient vignette at bottom so floating text is readable */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#09090B] via-transparent to-transparent opacity-85" />
+
+                  {/* Floating Info Card at Bottom of Photo */}
+                  <div className="absolute bottom-3 left-3 right-3 p-3.5 rounded-xl bg-zinc-900/90 backdrop-blur-md border border-white/10 shadow-lg">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h3 className="text-sm font-bold text-white tracking-tight flex items-center gap-1.5">
+                          <span>Pranav Badagi</span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                        </h3>
+                        <p className="text-[11px] font-mono text-zinc-400 mt-0.5">
+                          Information Science & Engineering • MS Engineering College
+                        </p>
+                      </div>
+                      <span className="text-xs font-mono font-bold text-cyan-400 bg-cyan-500/10 px-2 py-1 rounded border border-cyan-500/20">
+                        8.8 CGPA
+                      </span>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="flex items-center justify-between p-2.5 rounded-lg bg-zinc-900/60 border border-white/5">
-                  <span className="text-zinc-400 flex items-center gap-2">
-                    <Code2 className="w-4 h-4 text-amber-400" />
-                    University Academic Standing
-                  </span>
-                  <span className="font-bold text-amber-300">8.8 CGPA (VTU)</span>
-                </div>
+                {/* Bottom Key System Highlights */}
+                <div className="p-3.5 bg-[#121215] border-t border-white/[0.08] grid grid-cols-2 gap-2 text-[11px] font-mono">
+                  <div className="flex items-center gap-2 p-2 rounded-lg bg-zinc-900/60 border border-white/5">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                    <div className="truncate">
+                      <span className="block text-[10px] text-zinc-500">Automated Tests</span>
+                      <span className="font-bold text-emerald-400">81+ Suites PASS</span>
+                    </div>
+                  </div>
 
-                <div className="pt-2 text-[11px] text-zinc-400 border-t border-white/5">
-                  <p className="text-cyan-400/90">
-                    &gt; const engineer = &#123;
-                  </p>
-                  <p className="pl-4 text-zinc-400">
-                    core: ["Java 21", "Spring Boot 3", "Solidity"],
-                  </p>
-                  <p className="pl-4 text-zinc-400">
-                    frontend: ["React 18", "Redux", "Tailwind"],
-                  </p>
-                  <p className="pl-4 text-zinc-400">
-                    focus: "Decentralized Systems & AI Workflows"
-                  </p>
-                  <p className="text-cyan-400/90">&gt; &#125;;</p>
+                  <div className="flex items-center gap-2 p-2 rounded-lg bg-zinc-900/60 border border-white/5">
+                    <Sparkles className="w-3.5 h-3.5 text-cyan-400 flex-shrink-0" />
+                    <div className="truncate">
+                      <span className="block text-[10px] text-zinc-500">SIH College Hackathon</span>
+                      <span className="font-bold text-cyan-400">MARINEX AI</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-              {/* Bottom pulse */}
-              <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-zinc-500">
-                <span className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                  EVM & Rest APIs Ready
-                </span>
-                <span>v2.4.0</span>
               </div>
             </div>
           </motion.div>
